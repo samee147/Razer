@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+}
+
+.black{
+    height:100vh;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    background-color: black;
+    align-items: center;
+}
+
+.landing-div{
+
+    width:90%;
+    height: 90vh;
+    border-radius: 2rem;
+    background-image:linear-gradient(45deg,#9b1c1c7b,#00e70075,#292ec083,#e3f11484);
+    background-size:1000%;
+    animation:color 12s ease-in-out infinite;
+}
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-color: 100% 0% ;
+    }
+}
