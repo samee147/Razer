@@ -1,0 +1,254 @@
+body{
+    all:unset;
+    font-family: Montserrat;
+}
+
+.landing-page{
+    background: linear-gradient(45deg,black,black,black, #008007,black,black, black);
+    background-size: 600% 600%;
+    animation: gradientAnimation 25s ease infinite;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    opacity: 1;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #00ff0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1.5s ease-in-out, visibility 1.5s ease-in-out;
+}
+
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.nav-bar{
+    z-index: 10;
+    font-size: 20px;
+    width: 100%; /* Ensure it takes full width of the parent */
+    max-width: 100%; /* Prevent overflow */
+    box-sizing: border-box; /* Include padding in width calculations */
+    padding: 0 5rem;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    height: 4rem;
+    position: sticky;
+    top: 0;   
+    align-items:center; 
+    box-shadow: 0 1px 30px #00ff0d;
+}
+
+.nav-buttons{
+    display:flex;
+    justify-content: space-around;
+}
+.each-button{
+    margin:0 20px 0 20px;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 80%;
+    height: 60%; /* Fixed height for the carousel */
+    border-radius: 10px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1.5s ease-in-out; /* Fade-in effect */
+    animation: shiftLeft 1.5s forwards ease-in-out; /* Apply animation */
+    background-color: transparent; /* Black background for the carousel */
+}
+
+.carousel.visible {
+    opacity: 1; /* Show carousel */
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%; /* Ensure the container takes full width */
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-item {
+    display: flex;
+    width: 100%; /* Each item takes full width */
+    height: 100%;
+    align-items: center;
+    flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.carousel img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 10px; /* Add rounded edges */
+}
+
+.carousel-text {
+    margin-left: 50px;
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #ffffff; /* Text color */
+}
+
+.carousel-text h2 {
+    margin: 0 20px 50px 0px;
+    font-size: 40px;
+}
+
+.carousel-text p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-button {
+    background-color: #00ff00cc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 255, 0, 1);
+}
+
+@keyframes shiftLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-20px);
+    }
+}
+
+/* Product Container */
+.product-container {
+    padding: 20px;
+    background-color: #000; /* Background color for the section */
+    text-align: center;
+}
+
+/* Section Title */
+.product-container .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+    padding-bottom: 5px;
+    color: white;
+}
+
+/* Grid Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Category Box */
+.product-category {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.product-category img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Overlay */
+.product-category .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.product-category .overlay h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.product-category .overlay a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover Effects */
+.product-category:hover img {
+    transform: scale(1.1);
+}
+
+.product-category:hover .overlay {
+    opacity: 1;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust column count based on layout */
+    gap: 15px; /* Space between items */
+}
+.product-item {
+    background: #000; /* Or whatever background fits */
+    padding: 10px;
+}
