@@ -1,3 +1,8 @@
+ // Add a class to the logo after the animation ends
+ const logo = document.querySelector('.animated-logo');
+ logo.addEventListener('animationend', () => {
+     logo.classList.add('finished');
+ });
 document.addEventListener('DOMContentLoaded', () => {
     const splashScreen = document.getElementById('splash-screen');
     const carousel = document.getElementById('carousel');

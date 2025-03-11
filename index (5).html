@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Razor United States</title>
+    <link rel="stylesheet" href="MainStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <img src="assets/Raz_logo.svg" alt="Logo" class="animated-logo">
+    
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="logo">Razor</div>
+        <div class="nav-buttons">
+            <div class="each-button">Home</div>
+            <div class="each-button">Products</div>
+            <div class="each-button">Gold</div>
+            <div class="each-button">Community</div>
+            <div class="each-button">Support</div>
+            <div class="each-button"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <div class="each-button"><i class="fa-solid fa-cart-shopping"></i></div>
+        </div>
+    </div>
+
+    <!-- Other Content -->
+    <div class="content">
+        <h1>Welcome to My Landing Page</h1>
+        <p>This is some example content on top of the animated background.</p>
+    </div>
+
+    <script>
+        // Add a class to the logo after the animation ends
+        const logo = document.querySelector('.animated-logo');
+        logo.addEventListener('animationend', () => {
+            logo.classList.add('finished');
+        });
+    </script>
+</body>
+</html>
